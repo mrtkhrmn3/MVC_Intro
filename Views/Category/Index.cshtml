@@ -1,0 +1,11 @@
+﻿@using WebApplication1.Models.Entities
+@model List<Category>
+
+<ul>
+    @foreach (var category in Model)
+    {
+            <li>
+            @category.Id - @category.Name
+            </li>
+    }
+</ul>

@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebApplication1.Contexts;
 using WebApplication1.DependencyResolver;
+using WebApplication1.Repositories.Abstracts;
+using WebApplication1.Repositories.Concretes;
 
 namespace WebApplication1
 {
@@ -15,10 +17,15 @@ namespace WebApplication1
             //Model:
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddDbContextService();
+
 
             //Services
             builder.Services.AddMvc();
+
+            builder.Services.AddDbContextService();
+
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<ICategoryRepository, FakeCategoryRepository>();
 
             var app = builder.Build();
 
