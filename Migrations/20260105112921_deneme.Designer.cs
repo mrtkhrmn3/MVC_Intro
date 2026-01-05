@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication1.Contexts;
 
@@ -10,9 +11,10 @@ using WebApplication1.Contexts;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260105112921_deneme")]
+    partial class deneme
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,12 +109,6 @@ namespace WebApplication1.Migrations
                             Id = 11,
                             Description = "Deneme verisi",
                             Name = "Deneme"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Description = "Ev dekorasyonu ve mobilyalar",
-                            Name = "Mobilya"
                         });
                 });
 #pragma warning restore 612, 618
